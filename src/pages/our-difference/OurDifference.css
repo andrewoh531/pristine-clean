@@ -1,0 +1,51 @@
+
+@media only screen and (min-width : 0px) {
+
+    .points-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 2em;
+    }
+
+    .bullet-point-container {
+        flex-basis: 5rem;
+        margin: 0 15px 15px 25px;
+    }
+
+    .heading {
+        font-weight: 400;
+        color: black;
+    }
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+    .points-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .bullet-point-container {
+        max-width: 250px;
+    }
+}
+
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 930px) {
+
+    .points-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .bullet-point-container {
+        max-width: 300px;
+        margin-bottom: 2em;
+    }
+
+}

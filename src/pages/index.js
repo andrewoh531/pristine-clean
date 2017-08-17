@@ -1,12 +1,26 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React, { Component } from 'react';
+import Intro from './intro/Intro';
+import Testimonials from './testimonials/TestimonialCarousel';
+import OurDifference from './our-difference/OurDifference';
+//import AboutUs from '../about-us/AboutUs';
+import OurServices from './our-services/OurServices';
+import Faq from './faq/Faq';
+import ContactUs from './contact-us/ContactUs';
+import './App.css';
 
-const IndexPage = () =>
-  <div>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
-  </div>
+class App extends Component {
+  render() {
+    return (
+      <div id="App" className="app-container">
+        <Intro/>
+        <Testimonials/>
+        <OurDifference/>
+        <OurServices/>
+        <Faq/>
+        <ContactUs/>
+      </div>
+    );
+  }
+}
 
-export default IndexPage
+export default App;

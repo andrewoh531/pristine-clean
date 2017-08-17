@@ -1,0 +1,27 @@
+@media only screen and (min-width : 0px) {
+
+    .faq-question {
+        font-weight: 400;
+        color: black;
+        line-height: 15px;
+    }
+
+    .faq-answer {
+        margin-top: 0.8em;
+        margin-bottom: 2.5em;
+    }
+
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 930px) {
+
+}

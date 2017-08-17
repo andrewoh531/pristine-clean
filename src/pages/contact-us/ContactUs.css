@@ -1,0 +1,26 @@
+@media only screen and (min-width : 0px) {
+
+    .contact-us-container {
+        margin-top: 0 !important;
+        margin-bottom: 2em;
+    }
+
+    .enquiry-form-input {
+        height: 8em;
+        margin-top: 1em;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        width: 100%;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 200;
+        font-size: 0.9em;
+        padding-left: 12px;
+        box-sizing: border-box;
+    }
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}

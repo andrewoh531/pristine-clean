@@ -1,0 +1,60 @@
+
+@media only screen and (min-width : 0px) {
+
+    .services-blurb {
+    }
+
+    .table-responsive {
+        width: 100%;
+        margin-top: 1em;
+        border: 1px solid #ddd;
+        overflow-x: auto;
+        line-height: 1.6em;
+    }
+
+    .bold {
+        font-weight: 600;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    th {
+        white-space: nowrap;
+        padding: 4px;
+        text-align: left;
+        font-weight: 400;
+    }
+
+    td {
+        white-space: nowrap;
+        border-top: 1px solid #ddd;
+        padding: 4px;
+    }
+
+    tr:hover td {
+        background: #eee;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    .services-blurb{
+    }
+
+    .table-responsive {
+        width: 100%;
+        margin-top: 2em;
+        border: 1px solid #ddd;
+        overflow-x: auto;
+    }
+}
+
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 930px) {
+
+
+}
