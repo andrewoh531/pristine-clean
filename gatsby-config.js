@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Pristine Clean - Home cleaning services`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
