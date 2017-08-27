@@ -15,14 +15,14 @@ steps:
 #      - docker run --rm -e AWS_DEFAULT_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY pristineclean:latest aws s3 cp --recursive . s3://www.pristineclean.com.au
 
   - wait
-  - label: 'Deploy to S3 bucket prod environment :rocket:'
+  - label: 'Deploy to S3 prod :rocket:'
     branches: master
     command:
       - docker run --rm -e AWS_DEFAULT_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY pristineclean:latest aws s3 cp --recursive . s3://www.pristineclean.com.au
 
 # TODO Remove hardcoded Cloudfront distribution id
   - wait
-  - label: 'Invalidate the cache :rocket:'
+  - label: 'Invalidating cache :satellite:'
     branches: master
     command:
       - docker run --rm -e AWS_DEFAULT_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY pristineclean:latest aws cloudfront create-invalidation --distribution-id E1TG52R0R5X2CD --paths /
