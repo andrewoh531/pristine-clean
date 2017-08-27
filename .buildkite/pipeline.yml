@@ -16,7 +16,7 @@ steps:
 
   - wait
   - label: 'Deploy to S3 prod :rocket:'
-    branches: master
+#    branches: master
     command:
       - docker run --rm -e AWS_DEFAULT_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY pristineclean:latest ls
       - docker run --rm -e AWS_DEFAULT_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY pristineclean:latest pwd
@@ -25,6 +25,6 @@ steps:
 # TODO Remove hardcoded Cloudfront distribution id
   - wait
   - label: 'Invalidating cache :satellite:'
-    branches: master
+#    branches: master
     command:
       - docker run --rm -e AWS_DEFAULT_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY pristineclean:latest aws cloudfront create-invalidation --distribution-id E1TG52R0R5X2CD --paths /
