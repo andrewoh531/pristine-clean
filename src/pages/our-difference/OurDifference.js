@@ -6,7 +6,7 @@ class OurDifference extends Component {
   render() {
     return (
       <div className="our-difference-container section">
-        <div className="section-heading">Our Difference</div>
+        <div className="section-heading">Why Us?</div>
         <div className="points-container">
           {
             differencesJson.map(item => <div key={item.heading}><BulletPoint heading={item.heading} text={item.text}/></div>)

@@ -1,5 +1,9 @@
 [
   {
+    "heading": "Fully Insured",
+    "text": "Our service is fully insured for accidental damages"
+  },
+  {
     "heading": "Reliable & Trustworthy",
     "text": "Customers have been with us for over 6 years and many trust us with their keys"
   },
@@ -18,9 +22,5 @@
   {
     "heading": "Value",
     "text": "You'll be hard pressed to find better quality cleans for the competitive prices"
-  },
-  {
-    "heading": "Fully Insured",
-    "text": "Our service is fully insured for accidental damages"
   }
 ]

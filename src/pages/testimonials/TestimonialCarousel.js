@@ -23,15 +23,15 @@ const options = {
   prevArrow: <PrevArrow/>,
   responsive: [
     { breakpoint: 550, settings: { slidesToShow: 1 } },
-    { breakpoint: 750, settings: { slidesToShow: 2, slidesToScroll: 2 } },
-    { breakpoint: 100000, settings: { slidesToShow: 3, slidesToScroll: 3 } }]
+    { breakpoint: 750, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+    { breakpoint: 100000, settings: { slidesToShow: 1, slidesToScroll: 1 } }]
 };
 
 class TestimonialCarousel extends Component {
   render() {
     return (
       <div className="testimonials-container section">
-        <div className="section-heading">Customer's feedback</div>
+        <div className="section-heading">Testimonies</div>
         <Slider {...options}>
           {
             testimonialsJson.map(t => <div key={t.name}><Testimonial name={t.name} text={t.text} date={t.date}/></div>)

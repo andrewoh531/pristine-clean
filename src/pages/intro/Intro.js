@@ -7,7 +7,11 @@ class Intro extends Component {
     return (
       <div className="intro">
         <div className="intro-background col-xs-12"/>
+
+        <div className="contact-us">0426 263 338</div>
+
         <div className="logo">
+
           <div className="pristine-clean-title col-xs-12">Pristine Clean</div>
           <span className="punch-line">Relax</span>
           <br/>
