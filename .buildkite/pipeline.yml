@@ -12,18 +12,7 @@ steps:
   - wait
   - label: 'Build and deploy :hammer: :rocket:'
     command:
-      - docker run --rm -e AWS_DEFAULT_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY pristineclean:latest gatsby build && ls && aws s3 cp --recursive ./public/ s3://www.pristineclean.com.au
-#      - docker run --rm -e AWS_DEFAULT_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY pristineclean:latest ls
-#      - docker run --rm -e AWS_DEFAULT_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY pristineclean:latest pwd
-#      - docker run --rm -e AWS_DEFAULT_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY pristineclean:latest aws s3 cp --recursive ./public/ s3://www.pristineclean.com.au
-
-#  - wait
-#  - label: 'Deploy to S3 prod :rocket:'
-##    branches: master
-#    command:
-#      - docker run --rm -e AWS_DEFAULT_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY pristineclean:latest ls
-#      - docker run --rm -e AWS_DEFAULT_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY pristineclean:latest pwd
-#      - docker run --rm -e AWS_DEFAULT_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY pristineclean:latest aws s3 cp --recursive ./public/ s3://www.pristineclean.com.au
+      - docker run --rm -e AWS_DEFAULT_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY pristineclean:latest /bin/bash -c "gatsby build; ls -al; aws s3 cp --recursive ./public/ s3://www.pristineclean.com.au"
 
 # TODO Remove hardcoded Cloudfront distribution id
   - wait
