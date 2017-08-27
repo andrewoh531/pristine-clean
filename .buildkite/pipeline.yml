@@ -1,0 +1,28 @@
+steps:
+  - label: 'Build Docker Image'
+    command:
+      - docker build --tag pristineclean:latest --file .buildkite/build-image-dockerfile .
+
+  - wait
+  - label: 'Build Gatsby.js artifacts  :hammer:'
+    command:
+      - docker run --rm -e AWS_DEFAULT_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY pristineclean:latest gatsby build
+
+#  - wait
+#  - label: 'Create/Update AWS Stack'
+#    branches: master
+#    command:
+#      - docker run --rm -e AWS_DEFAULT_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY pristineclean:latest aws s3 cp --recursive . s3://www.pristineclean.com.au
+
+  - wait
+  - label: 'Deploy to S3 bucket prod environment :rocket:'
+    branches: master
+    command:
+      - docker run --rm -e AWS_DEFAULT_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY pristineclean:latest aws s3 cp --recursive . s3://www.pristineclean.com.au
+
+# TODO Remove hardcoded Cloudfront distribution id
+  - wait
+  - label: 'Invalidate the cache :rocket:'
+    branches: master
+    command:
+      - docker run --rm -e AWS_DEFAULT_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY pristineclean:latest aws cloudfront create-invalidation --distribution-id E1TG52R0R5X2CD --paths /
