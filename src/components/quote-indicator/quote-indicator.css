@@ -1,0 +1,28 @@
+
+
+.price-button {
+    max-width: 100px;
+    /*max-width: 10rem;*/
+    height: 3rem;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+}
+
+/* XS (<768px) */
+@media only screen and (min-width : 0px) {
+
+
+}
+
+/* SM (768px - 992px) */
+@media only screen and (min-width : 768px) {
+
+}
+
+
+
+/* MD (992px - 1200px) */
+@media only screen and (min-width : 992px) {
+
+
+}
