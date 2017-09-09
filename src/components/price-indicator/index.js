@@ -203,10 +203,10 @@ class QuoteIndicator extends Component {
           <Dropdown id="number-of-bedrooms-dropdown" value={this.state.bedrooms} options={BEDROOM_TYPES_LIST} onClickHandler={this.housePropertyChangeHandler(BEDROOMS_TYPE_PARAM)}/>
           <Dropdown id="number-of-bathrooms-dropdown" value={this.state.bathrooms} options={BATHROOMS_TYPE_LIST} onClickHandler={this.housePropertyChangeHandler(BATHROOMS_TYPE_PARAM)}/>
           <Dropdown id="cleaning-type-dropdown" value={this.state.cleaningType} options={CLEANING_TYPE_LIST} onClickHandler={this.housePropertyChangeHandler(CLEANING_TYPE_PARAM)}/>
-
         </div>
-        <div className="row justify-content-center">
-          <button type="button" className="btn btn-primary price-button col-xs-12 col-sm-2">${this.state.indicativePrice}</button>
+
+        <div className="row justify-content-center mt-2">
+          <a href="#contact-us" className="btn btn-primary price-button col-xs-12 col-sm-9">Book from ${this.state.indicativePrice}</a>
         </div>
       </div>
     );

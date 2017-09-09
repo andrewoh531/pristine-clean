@@ -1,11 +1,11 @@
 
 
 .price-button {
-    max-width: 100px;
-    /*max-width: 10rem;*/
+    /*max-width: 100px;*/
     height: 3rem;
     margin-top: 0.1rem;
     margin-bottom: 0.1rem;
+    line-height: 30px !important;
 }
 
 /* XS (<768px) */

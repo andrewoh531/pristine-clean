@@ -2,6 +2,9 @@
 .dropdown-button {
     width: 10rem;
     height: 3rem;
-    margin-top: 0.1rem;
-    margin-bottom: 0.1rem;
+    margin: 0.1rem;
+}
+
+dropdown-padding {
+    margin: 0.1rem;
 }
