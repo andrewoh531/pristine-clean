@@ -16,7 +16,6 @@ class Intro extends Component {
           <span className="punch-line">Relax</span>
           <br/>
           <span className="punch-line">Leave the cleaning to us</span>
-          <QuoteIndicator/>
         </div>
 
       </div>
