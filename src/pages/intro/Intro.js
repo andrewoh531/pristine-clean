@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Intro.css';
-import 'flexboxgrid/dist/flexboxgrid.min.css';
 
 class Intro extends Component {
   render() {
@@ -17,6 +16,7 @@ class Intro extends Component {
           <br/>
           <span className="punch-line">Leave the cleaning to us</span>
         </div>
+
       </div>
     );
   }
