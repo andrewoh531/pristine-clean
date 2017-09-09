@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import QuoteIndicator from '../../components/quote-indicator';
 import './Intro.css';
 
 class Intro extends Component {
