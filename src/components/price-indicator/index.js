@@ -48,6 +48,7 @@ class QuoteIndicator extends Component {
     return (value) => {
       this.setState({[propertyName]: value});
       this.setState({indicativePrice: this.getIndicativePrice(Object.assign({}, this.state, {[propertyName]: value}))});
+      ga('send', 'event', 'price-indicator', 'property-changed', propertyName, value)
     };
   };
 
