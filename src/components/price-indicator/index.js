@@ -40,7 +40,7 @@ class QuoteIndicator extends Component {
       [BEDROOMS_TYPE_PARAM]: BEDROOMS_2,
       [BATHROOMS_TYPE_PARAM]: BATHROOMS_2,
       [CLEANING_TYPE_PARAM]: REGULAR_CLEANING,
-      indicativePrice: 85
+      indicativePrice: this.getIndicativePrice({[BEDROOMS_TYPE_PARAM]: BEDROOMS_2, [BATHROOMS_TYPE_PARAM]: BATHROOMS_2, [CLEANING_TYPE_PARAM]: REGULAR_CLEANING})
     }
   }
 
@@ -57,135 +57,135 @@ class QuoteIndicator extends Component {
         [BATHROOMS_1]: {
           [REGULAR_CLEANING]: 55,
           [DEEP_CLEANING]: 100,
-          [MOVING_CLEANING]: 200
+          [MOVING_CLEANING]: 300
         },
         [BATHROOMS_2]: {
           [REGULAR_CLEANING]: 65,
           [DEEP_CLEANING]: 120,
-          [MOVING_CLEANING]: 220
+          [MOVING_CLEANING]: 350
         },
         [BATHROOMS_3]: {
           [REGULAR_CLEANING]: 75,
           [DEEP_CLEANING]: 140,
-          [MOVING_CLEANING]: 240
+          [MOVING_CLEANING]: 400
         },
         [BATHROOMS_4]: {
           [REGULAR_CLEANING]: 85,
           [DEEP_CLEANING]: 150,
-          [MOVING_CLEANING]: 260
+          [MOVING_CLEANING]: 450
         },
         [BATHROOMS_5]: {
           [REGULAR_CLEANING]: 95,
           [DEEP_CLEANING]: 160,
-          [MOVING_CLEANING]: 280
+          [MOVING_CLEANING]: 500
         }
       },
       [BEDROOMS_1]: {
         [BATHROOMS_1]: {
           [REGULAR_CLEANING]: 60,
           [DEEP_CLEANING]: 120,
-          [MOVING_CLEANING]: 2020
+          [MOVING_CLEANING]: 400
         },
         [BATHROOMS_2]: {
           [REGULAR_CLEANING]: 70,
           [DEEP_CLEANING]: 140,
-          [MOVING_CLEANING]: 240
+          [MOVING_CLEANING]: 450
         },
         [BATHROOMS_3]: {
           [REGULAR_CLEANING]: 80,
           [DEEP_CLEANING]: 160,
-          [MOVING_CLEANING]: 260
+          [MOVING_CLEANING]: 500
         },
         [BATHROOMS_4]: {
           [REGULAR_CLEANING]: 90,
           [DEEP_CLEANING]: 180,
-          [MOVING_CLEANING]: 280
+          [MOVING_CLEANING]: 550
         },
         [BATHROOMS_5]: {
           [REGULAR_CLEANING]: 100,
           [DEEP_CLEANING]: 200,
-          [MOVING_CLEANING]: 300
+          [MOVING_CLEANING]: 600
         }
       },
       [BEDROOMS_2]: {
         [BATHROOMS_1]: {
           [REGULAR_CLEANING]: 70,
           [DEEP_CLEANING]: 150,
-          [MOVING_CLEANING]: 300
+          [MOVING_CLEANING]: 450
         },
         [BATHROOMS_2]: {
           [REGULAR_CLEANING]: 85,
           [DEEP_CLEANING]: 180,
-          [MOVING_CLEANING]: 350
+          [MOVING_CLEANING]: 500
         },
         [BATHROOMS_3]: {
           [REGULAR_CLEANING]: 100,
           [DEEP_CLEANING]: 210,
-          [MOVING_CLEANING]: 400
+          [MOVING_CLEANING]: 550
         },
         [BATHROOMS_4]: {
           [REGULAR_CLEANING]: 115,
           [DEEP_CLEANING]: 240,
-          [MOVING_CLEANING]: 460
+          [MOVING_CLEANING]: 600
         },
         [BATHROOMS_5]: {
           [REGULAR_CLEANING]: 130,
           [DEEP_CLEANING]: 270,
-          [MOVING_CLEANING]: 530
+          [MOVING_CLEANING]: 650
         }
       },
       [BEDROOMS_3]: {
         [BATHROOMS_1]: {
-          [REGULAR_CLEANING]: 75,
+          [REGULAR_CLEANING]: 70,
           [DEEP_CLEANING]: 160,
-          [MOVING_CLEANING]: 350
+          [MOVING_CLEANING]: 500
         },
         [BATHROOMS_2]: {
           [REGULAR_CLEANING]: 90,
           [DEEP_CLEANING]: 190,
-          [MOVING_CLEANING]: 400
+          [MOVING_CLEANING]: 550
         },
         [BATHROOMS_3]: {
-          [REGULAR_CLEANING]: 105,
+          [REGULAR_CLEANING]: 110,
           [DEEP_CLEANING]: 220,
-          [MOVING_CLEANING]: 450
+          [MOVING_CLEANING]: 600
         },
         [BATHROOMS_4]: {
-          [REGULAR_CLEANING]: 120,
+          [REGULAR_CLEANING]: 130,
           [DEEP_CLEANING]: 250,
-          [MOVING_CLEANING]: 500
+          [MOVING_CLEANING]: 650
         },
         [BATHROOMS_5]: {
-          [REGULAR_CLEANING]: 135,
+          [REGULAR_CLEANING]: 150,
           [DEEP_CLEANING]: 280,
-          [MOVING_CLEANING]: 550
+          [MOVING_CLEANING]: 700
         }
       },
       [BEDROOMS_4]: {
         [BATHROOMS_1]: {
           [REGULAR_CLEANING]: 95,
           [DEEP_CLEANING]: 190,
-          [MOVING_CLEANING]: 400
+          [MOVING_CLEANING]: 550
         },
         [BATHROOMS_2]: {
           [REGULAR_CLEANING]: 110,
           [DEEP_CLEANING]: 220,
-          [MOVING_CLEANING]: 450
+          [MOVING_CLEANING]: 600
         },
         [BATHROOMS_3]: {
           [REGULAR_CLEANING]: 130,
           [DEEP_CLEANING]: 250,
-          [MOVING_CLEANING]: 500
+          [MOVING_CLEANING]: 650
         },
         [BATHROOMS_4]: {
           [REGULAR_CLEANING]: 150,
           [DEEP_CLEANING]: 280,
-          [MOVING_CLEANING]: 550
+          [MOVING_CLEANING]: 700
         },
         [BATHROOMS_5]: {
           [REGULAR_CLEANING]: 170,
           [DEEP_CLEANING]: 310,
-          [MOVING_CLEANING]: 600
+          [MOVING_CLEANING]: 750
         }
       },
     };

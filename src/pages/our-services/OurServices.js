@@ -21,15 +21,15 @@ class OurServices extends Component {
                 <tr>
                   <th className="column-service"></th>
                   <th className="column-regular">Regular</th>
+                  <th className="column-spring">Deep cleaning</th>
                   <th className="column-move-in-out">Move in/out</th>
-                  <th className="column-spring">Spring cleaning</th>
                 </tr>
 
                 <tr className="active">
                   <td><span className="bold">Starting Price</span></td>
                   <td>$55</td>
-                  <td>$200</td>
                   <td>$100</td>
+                  <td>$300</td>
                 </tr>
 
                 <tr className="active">
@@ -89,44 +89,44 @@ class OurServices extends Component {
                 <tr>
                   <td>Dust and wipe furniture</td>
                   <td>Yes</td>
-                  <td> -</td>
                   <td>Yes</td>
+                  <td> -</td>
                 </tr>
                 <tr>
                   <td>Vacuum couch & chairs</td>
                   <td>Yes</td>
-                  <td> -</td>
                   <td>Yes</td>
+                  <td> -</td>
                 </tr>
                 <tr>
                   <td>Carpet steam cleaning</td>
                   <td> -</td>
-                  <td>Yes</td>
                   <td>Optional</td>
+                  <td>Yes</td>
                 </tr>
                 <tr>
                   <td>Windows including frame & track</td>
                   <td> -</td>
-                  <td>Yes</td>
                   <td>Optional</td>
+                  <td>Yes</td>
                 </tr>
                 <tr>
                   <td>Removal of mark & stains from walls/doors</td>
                   <td> -</td>
-                  <td>Yes</td>
                   <td>Optional</td>
+                  <td>Yes</td>
                 </tr>
                 <tr>
                   <td>Light covers (interior & exterior)</td>
                   <td> -</td>
-                  <td>Yes</td>
                   <td>Optional</td>
+                  <td>Yes</td>
                 </tr>
                 <tr>
                   <td>Wardrobe/cabinets (interior & exterior)</td>
                   <td> -</td>
-                  <td>Yes</td>
                   <td> -</td>
+                  <td>Yes</td>
                 </tr>
 
 
@@ -175,20 +175,20 @@ class OurServices extends Component {
                 <tr>
                   <td>Oven cleaning</td>
                   <td> -</td>
-                  <td>Yes</td>
                   <td>Optional</td>
+                  <td>Yes</td>
                 </tr>
                 <tr>
                   <td>Rangehood filter</td>
                   <td> -</td>
-                  <td>Yes</td>
                   <td>Optional</td>
+                  <td>Yes</td>
                 </tr>
                 <tr>
                   <td>Cupboard/Cabinet interiors</td>
                   <td> -</td>
-                  <td>Yes</td>
                   <td> -</td>
+                  <td>Yes</td>
                 </tr>
 
                 <tr className="active">
