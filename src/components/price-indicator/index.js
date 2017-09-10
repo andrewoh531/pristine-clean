@@ -52,6 +52,10 @@ class QuoteIndicator extends Component {
     };
   };
 
+  bookButtonClickHandler = () => {
+    ga('send', 'event', 'price-indicator', 'book-now-button', 'click', 'true')
+  };
+
   getIndicativePrice = ({bedrooms, bathrooms, cleaningType}) => {
     const prices = {
       [STUDIO]: {
@@ -207,7 +211,7 @@ class QuoteIndicator extends Component {
         </div>
 
         <div className="row justify-content-center mt-2">
-          <a href="#contact-us" className="btn btn-primary price-button col-xs-12 col-sm-9">Book from ${this.state.indicativePrice}</a>
+          <a href="#contact-us" className="btn btn-primary price-button col-xs-12 col-sm-9" onClick={this.bookButtonClickHandler}>Book from ${this.state.indicativePrice}</a>
         </div>
       </div>
     );
