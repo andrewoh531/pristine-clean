@@ -48,12 +48,12 @@ class QuoteIndicator extends Component {
     return (value) => {
       this.setState({[propertyName]: value});
       this.setState({indicativePrice: this.getIndicativePrice(Object.assign({}, this.state, {[propertyName]: value}))});
-      ga('send', 'event', 'price-indicator', 'property-changed', propertyName, value)
+      ga('send', 'event', 'price-indicator', propertyName, value)
     };
   };
 
   bookButtonClickHandler = () => {
-    ga('send', 'event', 'price-indicator', 'book-now-button', 'click', 'true')
+    ga('send', 'event', 'price-indicator', 'book-now-button', 'click');
   };
 
   getIndicativePrice = ({bedrooms, bathrooms, cleaningType}) => {
