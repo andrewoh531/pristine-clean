@@ -7,12 +7,14 @@ import Faq from './faq/Faq';
 import ContactUs from './contact-us/ContactUs';
 import './App.css';
 import PriceIndicator from './price-indicator';
+
+import Layout from '../components/layout'
 //import AboutUs from '../about-us/AboutUs';
 
 class App extends Component {
   render() {
     return (
-      <div id="App" className="app-container">
+      <Layout>
         <Intro/>
         <Testimonials/>
         <OurDifference/>
@@ -20,7 +22,7 @@ class App extends Component {
         <PriceIndicator/>
         <Faq/>
         <ContactUs/>
-      </div>
+      </Layout>
     );
   }
 }
