@@ -3,6 +3,8 @@ import {validate} from 'email-validator';
 import './ContactUs.css';
 import axios from 'axios';
 
+import styled from 'styled-components';
+
 /**
  * Type of clean
  *  property type
@@ -10,6 +12,24 @@ import axios from 'axios';
  *  number of bathrooms
  *
  */
+
+// .enquiry-form-input {
+//   height: 8em;
+//   margin-top: 1em;
+//   border-radius: 4px;
+//   border: 1px solid #ccc;
+//   width: 100%;
+//   font-family: 'Raleway', sans-serif;
+//   font-weight: 200;
+//   font-size: 0.9em;
+//   padding-left: 12px;
+//   box-sizing: border-box;
+// }
+
+const Wrapper = styled.div`
+  max-width: 50rem;
+  margin: 0 auto;
+`;
 
 const initialState = {
   name: '',
@@ -25,40 +45,40 @@ class ContactUsPresentation extends Component {
     super(props);
     this.state = initialState;
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleNameBlur = this.handleNameBlur.bind(this);
-    this.handleEmailBlur = this.handleEmailBlur.bind(this);
-    this.handleMobileBlur = this.handleMobileBlur.bind(this);
-    this.handleEnquiryBlur = this.handleEnquiryBlur.bind(this);
-    this.isValidEmail = this.isValidEmail.bind(this);
-    this.shouldDisableButton = this.shouldDisableButton.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
+    // this.handleNameBlur = this.handleNameBlur.bind(this);
+    // this.handleEmailBlur = this.handleEmailBlur.bind(this);
+    // this.handleMobileBlur = this.handleMobileBlur.bind(this);
+    // this.handleEnquiryBlur = this.handleEnquiryBlur.bind(this);
+    // this.isValidEmail = this.isValidEmail.bind(this);
+    // this.shouldDisableButton = this.shouldDisableButton.bind(this);
   }
 
-  handleChange(event) {
+  handleChange = event => {
     this.setState({[event.target.name]: event.target.value});
   }
 
-  handleNameBlur(event) {
+  // handleNameBlur(event) {
 
-  }
+  // }
 
-  handleMobileBlur(event) {
+  // handleMobileBlur(event) {
 
-  }
+  // }
 
-  handleEmailBlur(event) {
+  // handleEmailBlur(event) {
 
-  }
+  // }
 
-  handleEnquiryBlur(event) {
+  // handleEnquiryBlur(event) {
 
-  }
+  // }
 
-  isValidEmail() {
+  isValidEmail = () => {
     return validate(this.state.email);
   }
 
-  shouldDisableButton() {
+  shouldDisableButton = () => {
     if (!this.state.name) {
       return true;
     }
@@ -93,17 +113,16 @@ class ContactUsPresentation extends Component {
       });
   };
 
-  resetState = () => {
-    this.setState({[event.target.name]: event.target.value});
-
-  }
+  // resetState = () => {
+  //   this.setState({[event.target.name]: event.target.value});
+  // }
 
   render() {
 
     const {name, email, mobile, enquiry} = this.state;
 
     return (
-      <div className="section-content-margin">
+      <Wrapper>
         <form  method="post" className="form-horizontal">
           <input name="name" type="text" placeholder="Name" className="form-input" value={name} onChange={this.handleChange} onBlur={this.handleNameBlur}/>
           <input name="email" type="email" placeholder="youremail@domain.com" className="form-input" value={email} onChange={this.handleChange}/>
@@ -111,7 +130,7 @@ class ContactUsPresentation extends Component {
           <textarea name="enquiry" type="text" placeholder="Enquiry message" className="enquiry-form-input" value={enquiry} onChange={this.handleChange}></textarea>
           <button disabled={this.shouldDisableButton()} id="send-email-button" type="button" data-loading-text="Sending..." className="button" onClick={this.submitHandler}>Send enquiry</button>
         </form>
-      </div>
+      </Wrapper>
     );
   }
 }
