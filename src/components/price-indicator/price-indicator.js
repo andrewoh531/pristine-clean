@@ -5,8 +5,8 @@ import './price-indicator.css';
 
 const HOUSE_TYPE_PARAM = 'houseType';
 const HOUSE_TYPE_APARTMENT = 'Apartment';
-const HOUSE_TYPE_HOUSE = 'House';
-const HOUSE_TYPE_LIST = [HOUSE_TYPE_APARTMENT, HOUSE_TYPE_HOUSE];
+// const HOUSE_TYPE_HOUSE = 'House';
+// const HOUSE_TYPE_LIST = [HOUSE_TYPE_APARTMENT, HOUSE_TYPE_HOUSE];
 
 const BEDROOMS_TYPE_PARAM = 'bedrooms';
 const STUDIO = 'Studio';
@@ -48,12 +48,12 @@ class QuoteIndicator extends Component {
     return (value) => {
       this.setState({[propertyName]: value});
       this.setState({indicativePrice: this.getIndicativePrice(Object.assign({}, this.state, {[propertyName]: value}))});
-      ga('send', 'event', propertyName, value)
+      // ga('send', 'event', propertyName, value)
     };
   };
 
   bookButtonClickHandler = () => {
-    ga('send', 'event', 'book-now-button', 'click');
+    // ga('send', 'event', 'book-now-button', 'click');
   };
 
   getIndicativePrice = ({bedrooms, bathrooms, cleaningType}) => {

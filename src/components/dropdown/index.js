@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './dropdown.css';
 
 class DropDown extends Component {
-
-  constructor(props) {
-    super(props);
-  }
-
 
   render() {
 
@@ -36,10 +32,10 @@ class DropDown extends Component {
 }
 
 DropDown.propTypes = {
-  id: React.PropTypes.string.isRequired,
-  value: React.PropTypes.string.isRequired,
-  options: React.PropTypes.array.isRequired,
-  onClickHandler: React.PropTypes.func.isRequired
+  id: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  options: PropTypes.array.isRequired,
+  onClickHandler: PropTypes.func.isRequired
 };
 
 export default DropDown;
