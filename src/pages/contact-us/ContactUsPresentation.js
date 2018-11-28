@@ -5,26 +5,6 @@ import axios from 'axios';
 
 import styled from 'styled-components';
 
-/**
- * Type of clean
- *  property type
- *  number of rooms
- *  number of bathrooms
- *
- */
-
-// .enquiry-form-input {
-//   height: 8em;
-//   margin-top: 1em;
-//   border-radius: 4px;
-//   border: 1px solid #ccc;
-//   width: 100%;
-//   font-family: 'Raleway', sans-serif;
-//   font-weight: 200;
-//   font-size: 0.9em;
-//   padding-left: 12px;
-//   box-sizing: border-box;
-// }
 
 const Wrapper = styled.div`
   max-width: 50rem;
@@ -44,35 +24,12 @@ class ContactUsPresentation extends Component {
   constructor(props) {
     super(props);
     this.state = initialState;
-
-    // this.handleChange = this.handleChange.bind(this);
-    // this.handleNameBlur = this.handleNameBlur.bind(this);
-    // this.handleEmailBlur = this.handleEmailBlur.bind(this);
-    // this.handleMobileBlur = this.handleMobileBlur.bind(this);
-    // this.handleEnquiryBlur = this.handleEnquiryBlur.bind(this);
-    // this.isValidEmail = this.isValidEmail.bind(this);
-    // this.shouldDisableButton = this.shouldDisableButton.bind(this);
   }
 
   handleChange = event => {
     this.setState({[event.target.name]: event.target.value});
   }
 
-  // handleNameBlur(event) {
-
-  // }
-
-  // handleMobileBlur(event) {
-
-  // }
-
-  // handleEmailBlur(event) {
-
-  // }
-
-  // handleEnquiryBlur(event) {
-
-  // }
 
   isValidEmail = () => {
     return validate(this.state.email);
@@ -86,6 +43,9 @@ class ContactUsPresentation extends Component {
       return true;
     }
     if (!this.state.enquiry) {
+      return true;
+    }
+    if (this.state.submitting) {
       return true;
     }
 
@@ -113,9 +73,13 @@ class ContactUsPresentation extends Component {
       });
   };
 
-  // resetState = () => {
-  //   this.setState({[event.target.name]: event.target.value});
-  // }
+  getSendButtonLabel = () => {
+    if (this.state.submitting) {
+      return 'Sending...';
+    }
+
+    return 'Send enquiry';
+  }
 
   render() {
 
@@ -128,7 +92,7 @@ class ContactUsPresentation extends Component {
           <input name="email" type="email" placeholder="youremail@domain.com" className="form-input" value={email} onChange={this.handleChange}/>
           <input name="mobile" type="text" placeholder="Mobile" className="form-input" value={mobile} onChange={this.handleChange}/>
           <textarea name="enquiry" type="text" placeholder="Enquiry message" className="enquiry-form-input" value={enquiry} onChange={this.handleChange}></textarea>
-          <button disabled={this.shouldDisableButton()} id="send-email-button" type="button" data-loading-text="Sending..." className="button" onClick={this.submitHandler}>Send enquiry</button>
+          <button disabled={this.shouldDisableButton()} id="send-email-button" type="button" data-loading-text="Sending..." className="button" onClick={this.submitHandler}>{this.getSendButtonLabel()}</button>
         </form>
       </Wrapper>
     );
