@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import './Intro.css';
 
+
 class Intro extends Component {
   render() {
     return (
-      <div className="intro">
-        <div className="intro-background col-xs-12"/>
-
+      <div className="intro-background">
         <div className="contact-us">0426 263 338</div>
 
         <div className="logo">

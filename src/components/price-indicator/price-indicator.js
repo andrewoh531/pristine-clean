@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Select from "react-select";
+
 import prices, {
   HOUSE_TYPE_PARAM,
   BATHROOMS_TYPE_PARAM,
@@ -93,12 +94,10 @@ class QuoteIndicator extends Component {
           Object.assign({}, this.state, { [propertyName]: selectedOption })
         )
       });
-      // ga('send', 'event', propertyName, value)
     };
   };
 
   bookButtonClickHandler = () => {
-    // ga('send', 'event', 'book-now-button', 'click');
   };
 
   getIndicativePrice = ({ bedrooms, bathrooms, cleaningType }) => {

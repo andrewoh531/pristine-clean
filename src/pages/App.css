@@ -1,4 +1,20 @@
 
+body {
+    margin: 0;
+}
+
+.intro-background {
+    height: 100vh; /* Set background size to be height of the display */
+    background: 100%;
+    background-image: url("../resources/hamock.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width : 0px) {
@@ -108,7 +124,6 @@
         color: #7d8998;
         margin: 3em auto 3em auto;
         max-width: 57em;
-        min-width: 57em;
     }
 }
 
