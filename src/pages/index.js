@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Intro from './intro/Intro';
+import Intro from './sections/Intro';
 import Testimonials from './testimonials/TestimonialCarousel';
 import OurDifference from './our-difference/OurDifference';
 import OurServices from './our-services/OurServices';
@@ -9,7 +9,6 @@ import './App.css';
 import PriceIndicator from './price-indicator';
 
 import Layout from '../components/layout'
-//import AboutUs from '../about-us/AboutUs';
 
 class App extends Component {
   render() {
