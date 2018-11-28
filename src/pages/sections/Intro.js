@@ -8,7 +8,7 @@ const Container = styled(Flex)`
   align-items: center;
   justify-content: center;
   padding-bottom: 10%;
-
+  font-family: 'Raleway', sans-serif;
 `
 
 const Title = styled(Box)`

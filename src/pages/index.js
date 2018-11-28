@@ -6,7 +6,7 @@ import OurServices from './our-services/OurServices';
 import Faq from './faq/Faq';
 import ContactUs from './contact-us/ContactUs';
 import './App.css';
-import PriceIndicator from './price-indicator';
+import PriceIndicator from './sections/price-indicator';
 
 import Layout from '../components/layout'
 
