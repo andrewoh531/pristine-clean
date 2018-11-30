@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import Intro from './intro/Intro';
+import Intro from './sections/Intro';
 import Testimonials from './testimonials/TestimonialCarousel';
 import OurDifference from './our-difference/OurDifference';
 import OurServices from './our-services/OurServices';
 import Faq from './faq/Faq';
 import ContactUs from './contact-us/ContactUs';
 import './App.css';
-import PriceIndicator from './price-indicator';
-//import AboutUs from '../about-us/AboutUs';
+import PriceIndicator from './sections/price-indicator';
+
+import Layout from '../components/layout'
 
 class App extends Component {
   render() {
     return (
-      <div id="App" className="app-container">
+      <Layout>
         <Intro/>
         <Testimonials/>
         <OurDifference/>
@@ -20,7 +21,7 @@ class App extends Component {
         <PriceIndicator/>
         <Faq/>
         <ContactUs/>
-      </div>
+      </Layout>
     );
   }
 }

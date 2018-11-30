@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Indicator from '../../components/price-indicator';
+import Indicator from './price-indicator';
 
 
 class PriceIndicator extends Component {

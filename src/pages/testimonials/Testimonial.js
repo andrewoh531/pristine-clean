@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './Testimonials.css';
 
 class Testimonial extends Component {
@@ -18,9 +19,9 @@ class Testimonial extends Component {
 
 
 Testimonial.propTypes = {
-  name: React.PropTypes.string.isRequired,
-  text: React.PropTypes.string.isRequired,
-  date: React.PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired
 };
 
 export default Testimonial;

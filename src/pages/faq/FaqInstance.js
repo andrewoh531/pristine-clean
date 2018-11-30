@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class FaqInstance extends Component {
   render() {
@@ -15,8 +16,8 @@ class FaqInstance extends Component {
 
 
 FaqInstance.propTypes = {
-  question: React.PropTypes.string.isRequired,
-  answer: React.PropTypes.string.isRequired
+  question: PropTypes.string.isRequired,
+  answer: PropTypes.string.isRequired
 };
 
 export default FaqInstance;

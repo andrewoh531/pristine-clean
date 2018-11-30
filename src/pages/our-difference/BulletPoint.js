@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './OurDifference.css';
 
 class BulletPoint extends Component {
@@ -17,8 +18,8 @@ class BulletPoint extends Component {
 
 
 BulletPoint.propTypes = {
-  heading: React.PropTypes.string.isRequired,
-  text: React.PropTypes.string.isRequired
+  heading: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired
 };
 
 export default BulletPoint;
