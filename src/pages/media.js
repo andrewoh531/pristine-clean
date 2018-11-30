@@ -1,8 +1,6 @@
 import { css } from 'styled-components'
 
-
 const min = size => `(min-width: ${size})`
-// const max = size => `(max-width: ${size})`
 
 const tablet = min('40em')
 const desktop = min('52em')

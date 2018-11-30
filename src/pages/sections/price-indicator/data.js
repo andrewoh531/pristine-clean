@@ -1,7 +1,5 @@
 const HOUSE_TYPE_PARAM = 'houseType';
 const HOUSE_TYPE_APARTMENT = 'Apartment';
-// const HOUSE_TYPE_HOUSE = 'House';
-// const HOUSE_TYPE_LIST = [HOUSE_TYPE_APARTMENT, HOUSE_TYPE_HOUSE];
 
 const BEDROOMS_TYPE_PARAM = 'bedrooms';
 const STUDIO = { value: 'Studio', label: 'Studio' };
