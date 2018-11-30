@@ -4,13 +4,23 @@ import axios from 'axios';
 import styled from 'styled-components';
 import './ContactUs.css';
 
-import Modal from '../../components/Modal'
-
-
 const Wrapper = styled.div`
   max-width: 50rem;
   margin: 0 auto;
 `;
+
+const SuccessMessage = styled.div`
+  background-color: #5bd776;
+  width: 100%;
+  border-radius: .3rem;
+  border: 1px solid transparent;
+  text-align: center;
+  padding: 0.3rem 0;
+
+  margin-top: 2rem;
+  color: #fff;
+  display: ${ props => props.isVisible ? 'block' : 'none' };
+`
 
 const initialState = {
   name: '',
@@ -18,7 +28,7 @@ const initialState = {
   email: '',
   enquiry: '',
   submitting: false,
-  isModalVisible: true
+  isEnquirySent: false
 };
 
 class ContactUsPresentation extends Component {
@@ -67,23 +77,21 @@ class ContactUsPresentation extends Component {
       })
       .then(res => {
         console.log(`success? = ${JSON.stringify(res)}`);
-        this.setState(Object.assign({}, initialState, { isModalVisible: true }));
+        this.setState(Object.assign({}, initialState, { isEnquirySent: true }));
       })
       .catch(err => {
         console.log(`error = ${JSON.stringify(err)}`);
       });
   };
 
-  hideModal = () => this.setState({ isModalVisible: false });
-
   render() {
 
-    const { name, email, mobile, enquiry, isModalVisible } = this.state;
+    const { name, email, mobile, enquiry, isEnquirySent } = this.state;
     const buttonLabel = (this.state.submitting) ? 'Sending...' : 'Send enquiry';
 
     return (
       <Wrapper>
-        <Modal isVisible={ isModalVisible } onBlur={ this.hideModal } />
+        <SuccessMessage isVisible={isEnquirySent}>Enquiry sent!</SuccessMessage>
         <form  method="post" className="form-horizontal">
           <input name="name" type="text" placeholder="Name" className="form-input" value={name} onChange={this.handleChange} onBlur={this.handleNameBlur}/>
           <input name="email" type="email" placeholder="youremail@domain.com" className="form-input" value={email} onChange={this.handleChange}/>
