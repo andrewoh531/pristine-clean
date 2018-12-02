@@ -65,12 +65,12 @@ workflows:
       - install-and-build
 
       - unlock-prod-deploy:
-          <<: *master_branch
+          # <<: *master_branch
           type: approval
           requires:
             - install-and-build
 
       - deploy-to-prod:
-          <<: *master_branch
+          # <<: *master_branch
           requires:
             - unlock-prod-deploy
