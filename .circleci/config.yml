@@ -1,0 +1,76 @@
+version: 2
+
+references:
+  node_image: &node_image
+    docker:
+      - image: circleci/node:10
+
+  attach_workspace: &attach_workspace
+    attach_workspace:
+      at: .
+
+  master_branch: &master_branch
+    filters:
+      branches:
+        only:
+          - master
+
+  not_master_branch: &not_master_branch
+    filters:
+      branches:
+        ignore:
+          - master
+
+  restore_cache: &restore_cache
+    restore_cache:
+      keys:
+        # when lock file changes, use increasingly general patterns to restore cache
+        - npm-repo-node-client-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
+        - npm-repo-node-client-v1-{{ .Branch }}-
+        - npm-repo-node-client-v1
+
+jobs:
+  install-and-build:
+    <<: *node_image
+    steps:
+      - checkout
+      - run: yarn install
+      - run: gatsby build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - public
+      - save_cache:
+          paths:
+            - ~/project/node_modules
+          key: npm-repo-node-client-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
+
+  deploy-to-prod:
+    <<: *node_image
+    steps:
+      - *attach_workspace
+      - *restore_cache
+      - run: 
+          name: Upload files to S3
+          command: aws s3 cp --recursive ./public/ s3://www.pristineclean.com.au
+      - run: 
+          name: Invalidate cloudfront cache
+          command: aws configure set preview.cloudfront true; aws cloudfront create-invalidation --distribution-id E1TG52R0R5X2CD --paths /
+
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - install-and-build
+
+      - unlock-prod-deploy:
+          <<: *master_branch
+          type: approval
+          requires:
+            - install-and-build
+
+      - deploy-to-prod:
+          <<: *master_branch
+          requires:
+            - unlock-prod-deploy
