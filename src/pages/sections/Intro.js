@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Flex, Box } from '@rebass/grid'
-import { tablet, desktop } from '../media';
+import { tablet, desktop } from '../../resources/media';
 
 const Container = styled(Flex)`
   flex-direction: column;
