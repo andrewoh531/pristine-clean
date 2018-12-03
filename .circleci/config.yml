@@ -4,8 +4,6 @@ references:
   node_image: &node_image
     docker:
       - image: circleci/python:3.7-stretch-node-browsers
-      environment:
-        PATH: ~/.local/bin:$PATH
 
   attach_workspace: &attach_workspace
     attach_workspace:
@@ -51,6 +49,8 @@ jobs:
             - ~/.local
             - ~/project/node_modules
           key: npm-repo-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
+    environment:
+      PATH: ~/.local/bin:$PATH
 
   deploy-to-prod:
     <<: *node_image
