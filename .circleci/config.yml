@@ -49,8 +49,6 @@ jobs:
             - ~/.local
             - ~/project/node_modules
           key: npm-repo-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
-    environment:
-      PATH: ~/.local/bin:$PATH
 
   deploy-to-prod:
     <<: *node_image
@@ -60,10 +58,11 @@ jobs:
       # - run: export PATH=~/.local/bin:$PATH
       - run: 
           name: Upload files to S3
-          command: aws s3 cp --recursive ./public/ s3://www.pristineclean.com.au
+          command:     environment:
+      PATH: ~/.local/bin/aws s3 cp --recursive ./public/ s3://www.pristineclean.com.au
       - run: 
           name: Invalidate cloudfront cache
-          command: aws configure set preview.cloudfront true; aws cloudfront create-invalidation --distribution-id E1TG52R0R5X2CD --paths /
+          command: ~/.local/bin/aws configure set preview.cloudfront true; ~/.local/bin/aws cloudfront create-invalidation --distribution-id E1TG52R0R5X2CD --paths /
       
 
 
