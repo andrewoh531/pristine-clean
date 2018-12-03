@@ -25,9 +25,9 @@ references:
     restore_cache:
       keys:
         # when lock file changes, use increasingly general patterns to restore cache
-        - npm-repo-node-client-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
-        - npm-repo-node-client-v1-{{ .Branch }}-
-        - npm-repo-node-client-v1
+        - npm-repo-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
+        - npm-repo-v1-{{ .Branch }}-
+        - npm-repo-v1
 
 
 jobs:
@@ -46,10 +46,9 @@ jobs:
             - public
       - save_cache:
           paths:
+            - ~/.local
             - ~/project/node_modules
-            - /home/circleci/.local/bin
-            - /home/circleci/.local/lib/python3.7/site-packages
-          key: npm-repo-node-client-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          key: npm-repo-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
 
   deploy-to-prod:
     <<: *node_image
