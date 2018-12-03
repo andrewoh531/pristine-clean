@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './OurServices.css';
+import React, { Component } from 'react'
+import './OurServices.css'
 
 class OurServices extends Component {
   render() {
@@ -7,36 +7,45 @@ class OurServices extends Component {
       <div className="our-services-container section">
         <div className="section-heading">Our Services</div>
         <div className="section-content-margin">
-
-          <div className="services-blurb">Pristine Clean provides 3 home cleaning services which can be further tailored to your needs.
-          These services are <span className="bold">regular home cleans</span> scheduled on a weekly to monthly basis. For a one off thorough clean we offer
-          <span className="bold"> spring cleans</span> where you may choose to include additional extras. Finally we have <span className="bold"> moving in/out cleans</span>, our most comprehensive
-          clean. Our services extend across all residential homes including detached houses, duplexes, villas, town houses, apartments and units.
-          See the table below for service inclusions.
+          <div className="services-blurb">
+            Pristine Clean provides 3 home cleaning services which can be
+            further tailored to your needs. These services are{' '}
+            <span className="bold">regular home cleans</span> scheduled on a
+            weekly to monthly basis. For a one off thorough clean we offer
+            <span className="bold"> spring cleans</span> where you may choose to
+            include additional extras. Finally we have{' '}
+            <span className="bold"> moving in/out cleans</span>, our most
+            comprehensive clean. Our services extend across all residential
+            homes including detached houses, duplexes, villas, town houses,
+            apartments and units. See the table below for service inclusions.
           </div>
 
-          <div className='table-responsive'>
+          <div className="table-responsive">
             <table className="table table-hover default">
               <tbody>
                 <tr>
-                  <th className="column-service"></th>
+                  <th className="column-service" />
                   <th className="column-regular">Regular</th>
                   <th className="column-spring">Deep cleaning</th>
                   <th className="column-move-in-out">Move in/out</th>
                 </tr>
 
                 <tr className="active">
-                  <td><span className="bold">Starting Price</span></td>
+                  <td>
+                    <span className="bold">Starting Price</span>
+                  </td>
                   <td>$55</td>
                   <td>$100</td>
                   <td>$300</td>
                 </tr>
 
                 <tr className="active">
-                  <td><span className="bold">Common areas</span></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>
+                    <span className="bold">Common areas</span>
+                  </td>
+                  <td />
+                  <td />
+                  <td />
                 </tr>
                 <tr>
                   <td>Vacuum carpet</td>
@@ -129,12 +138,13 @@ class OurServices extends Component {
                   <td>Yes</td>
                 </tr>
 
-
                 <tr className="active">
-                  <td><span className="bold">Kitchen</span></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>
+                    <span className="bold">Kitchen</span>
+                  </td>
+                  <td />
+                  <td />
+                  <td />
                 </tr>
                 <tr>
                   <td>Clean sinks and backsplash</td>
@@ -192,10 +202,12 @@ class OurServices extends Component {
                 </tr>
 
                 <tr className="active">
-                  <td><span className="bold">Bathroom</span></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>
+                    <span className="bold">Bathroom</span>
+                  </td>
+                  <td />
+                  <td />
+                  <td />
                 </tr>
                 <tr>
                   <td>Clean and disinfect toilet</td>
@@ -218,11 +230,10 @@ class OurServices extends Component {
               </tbody>
             </table>
           </div>
-
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default OurServices;
+export default OurServices

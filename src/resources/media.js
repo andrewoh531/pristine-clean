@@ -16,5 +16,5 @@ export { tablet, desktop, largeDesktop }
 export default {
   tablet: breakpoint(tablet),
   desktop: breakpoint(desktop),
-  largeDesktop: breakpoint(largeDesktop)
+  largeDesktop: breakpoint(largeDesktop),
 }

@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 import { Flex, Box } from '@rebass/grid'
-import { tablet, desktop } from '../../resources/media';
+import { tablet, desktop } from '../../resources/media'
 
 const Container = styled(Flex)`
   height: 100vh;
@@ -32,7 +32,6 @@ const Tagline = styled.div`
   font-size: 1.5em;
   font-weight: 400;
 
-
   @media ${tablet} {
     font-size: 2.5rem;
   }
@@ -46,4 +45,4 @@ const Intro = props => (
   </Container>
 )
 
-export default Intro;
+export default Intro
