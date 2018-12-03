@@ -57,10 +57,10 @@ jobs:
       - *attach_workspace
       - *restore_cache
       - run:
-        name: Update PATH
-        command: |
-          echo 'export PATH=~/.local/bin/:$PATH' >> $BASH_ENV
-          source $BASH_ENV
+          name: Update PATH
+          command: |
+            echo 'export PATH=~/.local/bin/:$PATH' >> $BASH_ENV
+            source $BASH_ENV
       - run: 
           name: Upload files to S3
           command: aws s3 cp --recursive ./public/ s3://www.pristineclean.com.au
