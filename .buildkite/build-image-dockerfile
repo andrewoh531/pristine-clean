@@ -1,5 +1,0 @@
-FROM andrewoh531/docker-buildkite:latest
-
-WORKDIR /opt/app
-COPY . ./
-RUN yarn install

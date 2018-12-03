@@ -6,11 +6,13 @@
   "dependencies": {
     "@rebass/grid": "^6.0.0-4",
     "axios": "^0.18.0",
+    "babel-plugin-styled-components": "^1.9.2",
     "email-validator": "^2.0.4",
     "gatsby": "^2.0.55",
     "gatsby-link": "^2.0.6",
     "gatsby-plugin-google-analytics": "^2.0.7",
     "gatsby-plugin-react-helmet": "^3.0.2",
+    "gatsby-plugin-styled-components": "^3.0.4",
     "jquery": "^3.3.1",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
@@ -19,7 +21,7 @@
     "react-select": "^2.1.2",
     "react-slick": "^0.23.2",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^4.1.1"
+    "styled-components": "^4.1.2"
   },
   "keywords": [
     "gatsby"
@@ -27,7 +29,8 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "gatsby build",
+    "build": "./node_modules/.bin/gatsby build",
+    "clean": "rm -rf public .cache",
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
