@@ -29,7 +29,6 @@ references:
         - npm-repo-v1-{{ .Branch }}-
         - npm-repo-v1
 
-
 jobs:
   install-and-build:
     <<: *node_image
@@ -50,7 +49,6 @@ jobs:
             - ~/project/node_modules
           key: npm-repo-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
 
-
   deploy-to-prod:
     <<: *node_image
     steps:
@@ -68,8 +66,6 @@ jobs:
           name: Invalidate cloudfront cache
           command: aws configure set preview.cloudfront true; aws cloudfront create-invalidation --distribution-id E1TG52R0R5X2CD --paths /
       
-
-
 workflows:
   version: 2
   build-and-deploy:
