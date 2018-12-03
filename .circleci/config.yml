@@ -42,6 +42,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
+            - yarn.lock
             - public
       - save_cache:
           paths:
