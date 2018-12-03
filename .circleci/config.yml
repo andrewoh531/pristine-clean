@@ -46,6 +46,7 @@ jobs:
       - save_cache:
           paths:
             - ~/project/node_modules
+            - /home/circleci/.local/bin
             - /home/circleci/.local/lib/python3.7/site-packages
           key: npm-repo-node-client-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
 
@@ -53,6 +54,7 @@ jobs:
     <<: *node_image
     steps:
       - *attach_workspace
+      - *restore_cache
       - run: export PATH=~/.local/bin:$PATH
       - run: 
           name: Upload files to S3
