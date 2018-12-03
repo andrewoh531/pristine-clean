@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Flex, Box } from '@rebass/grid'
 import { tablet, desktop } from '../../resources/media';
 
 const Container = styled(Flex)`
+  height: 100vh;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding-bottom: 10%;
+  padding-top: 10rem;
   font-family: 'Raleway', sans-serif;
 `
 
@@ -38,16 +38,12 @@ const Tagline = styled.div`
   }
 `
 
-class Intro extends Component {
-  render() {
-    return (
-      <Container className="intro-background">
-        <Title>Pristine Clean</Title>
-        <Tagline>Relax</Tagline>
-        <Tagline>Leave the cleaning to us</Tagline>
-      </Container>
-    );
-  }
-}
+const Intro = props => (
+  <Container className="intro-background">
+    <Title>Pristine Clean</Title>
+    <Tagline>Relax</Tagline>
+    <Tagline>Leave the cleaning to us</Tagline>
+  </Container>
+)
 
 export default Intro;

@@ -10,6 +10,9 @@ module.exports = {
         trackingId: 'UA-30709309-3',
         optimizeId: "UA-30709309-3"
       },
-    }
+    },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+    },
   ],
 };
