@@ -29,12 +29,14 @@ references:
         - npm-repo-node-client-v1-{{ .Branch }}-
         - npm-repo-node-client-v1
 
+
 jobs:
   install-and-build:
     <<: *node_image
     steps:
       - checkout
       - *restore_cache
+      - run: pip install awscli --upgrade --user
       - run: yarn install
       - run: yarn build
       - persist_to_workspace:
@@ -44,13 +46,14 @@ jobs:
       - save_cache:
           paths:
             - ~/project/node_modules
+            - /home/circleci/.local/lib/python3.7/site-packages
           key: npm-repo-node-client-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
 
   deploy-to-prod:
     <<: *node_image
     steps:
       - *attach_workspace
-      - run: pip install awscli --upgrade --user
+      - run: export PATH=~/.local/bin:$PATH
       - run: 
           name: Upload files to S3
           command: aws s3 cp --recursive ./public/ s3://www.pristineclean.com.au
