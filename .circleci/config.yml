@@ -3,7 +3,7 @@ version: 2
 references:
   node_image: &node_image
     docker:
-      - image: circleci/node:10
+      - image: circleci/python:3.7-stretch-node-browsers
 
   attach_workspace: &attach_workspace
     attach_workspace:
@@ -34,6 +34,7 @@ jobs:
     <<: *node_image
     steps:
       - checkout
+      - *restore_cache
       - run: yarn install
       - run: yarn build
       - persist_to_workspace:
@@ -49,7 +50,6 @@ jobs:
     <<: *node_image
     steps:
       - *attach_workspace
-      - *restore_cache
       - run: 
           name: Upload files to S3
           command: aws s3 cp --recursive ./public/ s3://www.pristineclean.com.au
