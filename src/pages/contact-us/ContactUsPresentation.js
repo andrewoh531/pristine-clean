@@ -3,6 +3,7 @@ import { validate } from 'email-validator'
 import axios from 'axios'
 import styled from 'styled-components'
 import './ContactUs.css'
+import Context, { EnquiryContext } from '../../components/Context'
 
 const Wrapper = styled.div`
   max-width: 50rem;
@@ -88,6 +89,9 @@ class ContactUsPresentation extends Component {
     const { name, email, mobile, enquiry, isEnquirySent } = this.state
     const buttonLabel = this.state.submitting ? 'Sending...' : 'Send enquiry'
 
+    let context = this.context;
+    console.log(`context in ContactUsPresentation = ${JSON.stringify(context)}`)
+
     return (
       <Wrapper>
         <SuccessMessage isVisible={isEnquirySent}>Enquiry sent!</SuccessMessage>
@@ -120,7 +124,7 @@ class ContactUsPresentation extends Component {
           <textarea
             name="enquiry"
             type="text"
-            placeholder="Enquiry message"
+            placeholder={JSON.stringify(this.context.newToggleContext)}
             className="enquiry-form-input"
             value={enquiry}
             onChange={this.handleChange}
@@ -140,5 +144,7 @@ class ContactUsPresentation extends Component {
     )
   }
 }
+
+ContactUsPresentation.contextType = EnquiryContext;
 
 export default ContactUsPresentation

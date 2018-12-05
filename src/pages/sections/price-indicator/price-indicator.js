@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Select from 'react-select'
+import { EnquiryContext } from '../../../components/Context'
 
 const HOUSE_TYPE_PARAM = 'houseType'
 const HOUSE_TYPE_APARTMENT = 'Apartment'
@@ -250,6 +251,7 @@ class QuoteIndicator extends Component {
   housePropertyChangeHandler = propertyName => {
     return selectedOption => {
       this.setState({ [propertyName]: selectedOption })
+      // this.setState({ [propertyName]: selectedOption, shouldBeUsed: true })
       this.setState({
         indicativePrice: this.getIndicativePrice(
           Object.assign({}, this.state, { [propertyName]: selectedOption })
@@ -266,38 +268,42 @@ class QuoteIndicator extends Component {
 
   render() {
     const { bedrooms, bathrooms, cleaningType, indicativePrice } = this.state
-
+    console.log(`context in price-indicator=${JSON.stringify(this.context)}`)
+    
     return (
-      <SelectionContainer>
-        <Select
-          value={bedrooms}
-          onChange={this.housePropertyChangeHandler(BEDROOMS_TYPE_PARAM)}
-          options={BEDROOM_TYPES_OPTIONS}
-          styles={customStyles}
-        />
-        <Select
-          value={bathrooms}
-          onChange={this.housePropertyChangeHandler(BATHROOMS_TYPE_PARAM)}
-          options={BATHROOMS_TYPE_OPTIONS}
-          styles={customStyles}
-        />
-        <Select
-          value={cleaningType}
-          onChange={this.housePropertyChangeHandler(CLEANING_TYPE_PARAM)}
-          options={CLEANING_TYPE_OPTIONS}
-          styles={customStyles}
-        />
+        <SelectionContainer>
+          <Select
+            value={bedrooms}
+            onChange={this.context.setEnquiry}
+            // onChange={this.housePropertyChangeHandler(BEDROOMS_TYPE_PARAM)}
+            options={BEDROOM_TYPES_OPTIONS}
+            styles={customStyles}
+          />
+          <Select
+            value={bathrooms}
+            onChange={this.housePropertyChangeHandler(BATHROOMS_TYPE_PARAM)}
+            options={BATHROOMS_TYPE_OPTIONS}
+            styles={customStyles}
+          />
+          <Select
+            value={cleaningType}
+            onChange={this.housePropertyChangeHandler(CLEANING_TYPE_PARAM)}
+            options={CLEANING_TYPE_OPTIONS}
+            styles={customStyles}
+          />
 
-        <StyledAnchor
-          href="#contact-us"
-          className="btn btn-primary price-button col-xs-12 col-sm-9"
-          onClick={this.bookButtonClickHandler}
-        >
-          Book from ${indicativePrice}
-        </StyledAnchor>
-      </SelectionContainer>
+          <StyledAnchor
+            href="#contact-us"
+            className="btn btn-primary price-button col-xs-12 col-sm-9"
+            onClick={this.bookButtonClickHandler}
+          >
+            Book from ${indicativePrice}
+          </StyledAnchor>
+        </SelectionContainer>
     )
   }
 }
+
+QuoteIndicator.contextType = EnquiryContext.Consumer;
 
 export default QuoteIndicator
