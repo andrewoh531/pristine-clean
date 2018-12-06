@@ -39,17 +39,15 @@ class ContactUsPresentation extends Component {
   }
 
   componentDidUpdate = () => {
-    const { shouldBeUsed } = this.context;
-
-    if (shouldBeUsed) {
+    if (this.context.shouldBeUsed) {
       this.context.setContext({ shouldBeUsed: false })
-      this.setState({ 
-        enquiry:  `${this.context.cleaningType} cleaning
+      this.setState({
+        enquiry: `${this.context.cleaningType} cleaning
 ${this.context.bedrooms}
 ${this.context.bathrooms}
 
 Suburb:
-Other information:`      
+Other information:`,
       })
     }
   }
@@ -158,6 +156,6 @@ Other information:`
   }
 }
 
-ContactUsPresentation.contextType = EnquiryContext;
+ContactUsPresentation.contextType = EnquiryContext
 
 export default ContactUsPresentation

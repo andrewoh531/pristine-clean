@@ -273,40 +273,40 @@ class QuoteIndicator extends Component {
 
   render() {
     const { bedrooms, bathrooms, cleaningType, indicativePrice } = this.state
-    
-    return (
-        <SelectionContainer>
-          <Select
-            value={bedrooms}
-            onChange={this.housePropertyChangeHandler(BEDROOMS_TYPE_PARAM)}
-            options={BEDROOM_TYPES_OPTIONS}
-            styles={customStyles}
-          />
-          <Select
-            value={bathrooms}
-            onChange={this.housePropertyChangeHandler(BATHROOMS_TYPE_PARAM)}
-            options={BATHROOMS_TYPE_OPTIONS}
-            styles={customStyles}
-          />
-          <Select
-            value={cleaningType}
-            onChange={this.housePropertyChangeHandler(CLEANING_TYPE_PARAM)}
-            options={CLEANING_TYPE_OPTIONS}
-            styles={customStyles}
-          />
 
-          <StyledAnchor
-            href="#contact-us"
-            className="btn btn-primary price-button col-xs-12 col-sm-9"
-            onClick={this.bookButtonClickHandler}
-          >
-            Book from ${indicativePrice}
-          </StyledAnchor>
-        </SelectionContainer>
+    return (
+      <SelectionContainer>
+        <Select
+          value={bedrooms}
+          onChange={this.housePropertyChangeHandler(BEDROOMS_TYPE_PARAM)}
+          options={BEDROOM_TYPES_OPTIONS}
+          styles={customStyles}
+        />
+        <Select
+          value={bathrooms}
+          onChange={this.housePropertyChangeHandler(BATHROOMS_TYPE_PARAM)}
+          options={BATHROOMS_TYPE_OPTIONS}
+          styles={customStyles}
+        />
+        <Select
+          value={cleaningType}
+          onChange={this.housePropertyChangeHandler(CLEANING_TYPE_PARAM)}
+          options={CLEANING_TYPE_OPTIONS}
+          styles={customStyles}
+        />
+
+        <StyledAnchor
+          href="#contact-us"
+          className="btn btn-primary price-button col-xs-12 col-sm-9"
+          onClick={this.bookButtonClickHandler}
+        >
+          Book from ${indicativePrice}
+        </StyledAnchor>
+      </SelectionContainer>
     )
   }
 }
 
-QuoteIndicator.contextType = EnquiryContext.Consumer;
+QuoteIndicator.contextType = EnquiryContext.Consumer
 
 export default QuoteIndicator
