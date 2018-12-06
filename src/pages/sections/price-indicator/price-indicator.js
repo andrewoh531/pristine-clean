@@ -251,7 +251,6 @@ class QuoteIndicator extends Component {
   housePropertyChangeHandler = propertyName => {
     return selectedOption => {
       this.setState({ [propertyName]: selectedOption })
-      // this.setState({ [propertyName]: selectedOption, shouldBeUsed: true })
       this.setState({
         indicativePrice: this.getIndicativePrice(
           Object.assign({}, this.state, { [propertyName]: selectedOption })
@@ -260,7 +259,13 @@ class QuoteIndicator extends Component {
     }
   }
 
-  bookButtonClickHandler = () => {}
+  bookButtonClickHandler = () => {
+    this.context.setContext({
+      [BEDROOMS_TYPE_PARAM]: this.state[BEDROOMS_TYPE_PARAM].value,
+      [BATHROOMS_TYPE_PARAM]: this.state[BATHROOMS_TYPE_PARAM].value,
+      [CLEANING_TYPE_PARAM]: this.state[CLEANING_TYPE_PARAM].value,
+    })
+  }
 
   getIndicativePrice = ({ bedrooms, bathrooms, cleaningType }) => {
     return prices[bedrooms.value][bathrooms.value][cleaningType.value]
@@ -268,14 +273,12 @@ class QuoteIndicator extends Component {
 
   render() {
     const { bedrooms, bathrooms, cleaningType, indicativePrice } = this.state
-    console.log(`context in price-indicator=${JSON.stringify(this.context)}`)
     
     return (
         <SelectionContainer>
           <Select
             value={bedrooms}
-            onChange={this.context.setEnquiry}
-            // onChange={this.housePropertyChangeHandler(BEDROOMS_TYPE_PARAM)}
+            onChange={this.housePropertyChangeHandler(BEDROOMS_TYPE_PARAM)}
             options={BEDROOM_TYPES_OPTIONS}
             styles={customStyles}
           />

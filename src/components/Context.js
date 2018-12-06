@@ -4,21 +4,29 @@ const EnquiryContext = createContext({
     shouldBeUsed: false
 });
 
-class MyContext extends Component {
+class Context extends Component {
     constructor(props) {
         super(props)
         this.state = { 
             shouldBeUsed: false,
-            setEnquiry: this.setEnquiry
+            setContext: this.setContext,
+            getDisplayableText: this.getDisplayableText
         }
     }
+    
+    setContext = state => {
+        this.setState({ 
+            shouldBeUsed: true,
+            ...state 
+        })
+    }
 
-    setEnquiry = () => {
-        console.log(`toggle triggered to ${!this.state.newToggleContext}`)
-        this.setState({ newToggleContext: !this.state.newToggleContext })
+    getDisplayableText = () => {
+        return `Enquiry for: \n
+            Bedrooms: ${this.state.bedrooms}
+        `
     }
     
-
     render() {
         return (
             <EnquiryContext.Provider value={{...this.state}}>
@@ -29,7 +37,7 @@ class MyContext extends Component {
 }
 
 export{
-    MyContext as default,
+    Context as default,
     EnquiryContext
 } 
 

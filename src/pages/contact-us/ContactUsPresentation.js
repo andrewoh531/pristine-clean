@@ -3,7 +3,7 @@ import { validate } from 'email-validator'
 import axios from 'axios'
 import styled from 'styled-components'
 import './ContactUs.css'
-import Context, { EnquiryContext } from '../../components/Context'
+import { EnquiryContext } from '../../components/Context'
 
 const Wrapper = styled.div`
   max-width: 50rem;
@@ -36,6 +36,22 @@ class ContactUsPresentation extends Component {
   constructor(props) {
     super(props)
     this.state = initialState
+  }
+
+  componentDidUpdate = () => {
+    const { shouldBeUsed } = this.context;
+
+    if (shouldBeUsed) {
+      this.context.setContext({ shouldBeUsed: false })
+      this.setState({ 
+        enquiry:  `${this.context.cleaningType} cleaning
+${this.context.bedrooms}
+${this.context.bathrooms}
+
+Suburb:
+Other information:`      
+      })
+    }
   }
 
   handleChange = event => {
@@ -89,9 +105,6 @@ class ContactUsPresentation extends Component {
     const { name, email, mobile, enquiry, isEnquirySent } = this.state
     const buttonLabel = this.state.submitting ? 'Sending...' : 'Send enquiry'
 
-    let context = this.context;
-    console.log(`context in ContactUsPresentation = ${JSON.stringify(context)}`)
-
     return (
       <Wrapper>
         <SuccessMessage isVisible={isEnquirySent}>Enquiry sent!</SuccessMessage>
@@ -124,7 +137,7 @@ class ContactUsPresentation extends Component {
           <textarea
             name="enquiry"
             type="text"
-            placeholder={JSON.stringify(this.context.newToggleContext)}
+            placeholder="Enquiry message"
             className="enquiry-form-input"
             value={enquiry}
             onChange={this.handleChange}
