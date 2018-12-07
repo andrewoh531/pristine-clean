@@ -3,6 +3,7 @@ import { validate } from 'email-validator'
 import axios from 'axios'
 import styled from 'styled-components'
 import './ContactUs.css'
+import { EnquiryContext } from '../../components/Context'
 
 const Wrapper = styled.div`
   max-width: 50rem;
@@ -22,6 +23,37 @@ const SuccessMessage = styled.div`
   display: ${props => (props.isVisible ? 'block' : 'none')};
 `
 
+const Label = styled.div`
+  margin-top: 1.2rem;
+  padding-left: 0.3rem;
+  font-weight: 600;
+  font-size: 1rem;
+`
+
+const Input = styled.input`
+  height: 35px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  font-size: 0.9em;
+  padding-left: 12px;
+  box-sizing: border-box;
+`
+
+const TextArea = styled.textarea`
+  height: 8em;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  font-size: 0.9em;
+  padding-left: 12px;
+  box-sizing: border-box;
+`
+
 const initialState = {
   name: '',
   mobile: '',
@@ -35,6 +67,13 @@ class ContactUsPresentation extends Component {
   constructor(props) {
     super(props)
     this.state = initialState
+  }
+
+  componentDidUpdate = () => {
+    if (this.context.shouldBeUsed) {
+      this.context.setContext({ shouldBeUsed: false })
+      this.setState({ enquiry: this.context.getDisplayableText() })
+    }
   }
 
   handleChange = event => {
@@ -92,36 +131,35 @@ class ContactUsPresentation extends Component {
       <Wrapper>
         <SuccessMessage isVisible={isEnquirySent}>Enquiry sent!</SuccessMessage>
         <form method="post" className="form-horizontal">
-          <input
+          <Label>Name</Label>
+          <Input
             name="name"
             type="text"
-            placeholder="Name"
-            className="form-input"
             value={name}
             onChange={this.handleChange}
             onBlur={this.handleNameBlur}
           />
-          <input
+
+          <Label>Email</Label>
+          <Input
             name="email"
             type="email"
-            placeholder="youremail@domain.com"
-            className="form-input"
             value={email}
             onChange={this.handleChange}
           />
-          <input
+
+          <Label>Mobile Number</Label>
+          <Input
             name="mobile"
             type="text"
-            placeholder="Mobile"
-            className="form-input"
             value={mobile}
             onChange={this.handleChange}
           />
-          <textarea
+
+          <Label>Enquiry</Label>
+          <TextArea
             name="enquiry"
             type="text"
-            placeholder="Enquiry message"
-            className="enquiry-form-input"
             value={enquiry}
             onChange={this.handleChange}
           />
@@ -140,5 +178,7 @@ class ContactUsPresentation extends Component {
     )
   }
 }
+
+ContactUsPresentation.contextType = EnquiryContext
 
 export default ContactUsPresentation

@@ -9,18 +9,21 @@ import './App.css'
 import PriceIndicator from './sections/price-indicator'
 
 import Layout from '../components/layout'
+import Context from '../components/Context'
 
 class App extends Component {
   render() {
     return (
       <Layout>
-        <Intro />
-        <Testimonials />
-        <OurDifference />
-        <OurServices />
-        <PriceIndicator />
-        <Faq />
-        <ContactUs />
+        <Context>
+          <Intro />
+          <Testimonials />
+          <OurDifference />
+          <OurServices />
+          <PriceIndicator />
+          <Faq />
+          <ContactUs />
+        </Context>
       </Layout>
     )
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Select from 'react-select'
+import { EnquiryContext } from '../../../components/Context'
 
 const HOUSE_TYPE_PARAM = 'houseType'
 const HOUSE_TYPE_APARTMENT = 'Apartment'
@@ -258,7 +259,13 @@ class QuoteIndicator extends Component {
     }
   }
 
-  bookButtonClickHandler = () => {}
+  bookButtonClickHandler = () => {
+    this.context.setContext({
+      [BEDROOMS_TYPE_PARAM]: this.state[BEDROOMS_TYPE_PARAM].value,
+      [BATHROOMS_TYPE_PARAM]: this.state[BATHROOMS_TYPE_PARAM].value,
+      [CLEANING_TYPE_PARAM]: this.state[CLEANING_TYPE_PARAM].value,
+    })
+  }
 
   getIndicativePrice = ({ bedrooms, bathrooms, cleaningType }) => {
     return prices[bedrooms.value][bathrooms.value][cleaningType.value]
@@ -299,5 +306,7 @@ class QuoteIndicator extends Component {
     )
   }
 }
+
+QuoteIndicator.contextType = EnquiryContext.Consumer
 
 export default QuoteIndicator
