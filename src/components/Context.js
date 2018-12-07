@@ -22,9 +22,12 @@ class Context extends Component {
   }
 
   getDisplayableText = () => {
-    return `Enquiry for: \n
-            Bedrooms: ${this.state.bedrooms}
-        `
+    return `${this.state.cleaningType} cleaning for ${
+      this.state.bedrooms
+    } and ${this.state.bathrooms}.
+
+Suburb:
+Enquiry:`
   }
 
   render() {

@@ -72,12 +72,7 @@ class ContactUsPresentation extends Component {
   componentDidUpdate = () => {
     if (this.context.shouldBeUsed) {
       this.context.setContext({ shouldBeUsed: false })
-      this.setState({
-        enquiry: `${this.context.cleaningType} cleaning for ${this.context.bedrooms} and ${this.context.bathrooms}.
-
-Suburb:
-Enquiry:`,
-      })
+      this.setState({ enquiry: this.context.getDisplayableText() })
     }
   }
 
