@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import Select from 'react-select'
 import { EnquiryContext } from '../../../components/Context'
+import ga from '../../../components/GoogleAnalytics'
 
 const HOUSE_TYPE_PARAM = 'houseType'
 const HOUSE_TYPE_APARTMENT = 'Apartment'
@@ -256,6 +257,7 @@ class QuoteIndicator extends Component {
           Object.assign({}, this.state, { [propertyName]: selectedOption })
         ),
       })
+      ga(propertyName, selectedOption.value)
     }
   }
 
@@ -265,6 +267,7 @@ class QuoteIndicator extends Component {
       [BATHROOMS_TYPE_PARAM]: this.state[BATHROOMS_TYPE_PARAM].value,
       [CLEANING_TYPE_PARAM]: this.state[CLEANING_TYPE_PARAM].value,
     })
+    ga('book-button', 'clicked')
   }
 
   getIndicativePrice = ({ bedrooms, bathrooms, cleaningType }) => {
