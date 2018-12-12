@@ -4,6 +4,7 @@ import axios from 'axios'
 import styled from 'styled-components'
 import './ContactUs.css'
 import { EnquiryContext } from '../../components/Context'
+import ga from '../../components/GoogleAnalytics'
 
 const Wrapper = styled.div`
   max-width: 50rem;
@@ -116,6 +117,7 @@ class ContactUsPresentation extends Component {
       )
       .then(res => {
         console.log(`success? = ${JSON.stringify(res)}`)
+        ga('enquiry-made', 'success')
         this.setState(Object.assign({}, initialState, { isEnquirySent: true }))
       })
       .catch(err => {
