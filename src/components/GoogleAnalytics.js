@@ -1,8 +1,7 @@
 export default (category, action) => {
-  if (window && window.ga) {
-    window.ga(`send`, `event`, {
-      eventCategory: category,
-      eventAction: action,
+  if (window && window.gtag) {
+    window.gtag(`event`, action, {
+      'event_category': category
     })
   }
 }
