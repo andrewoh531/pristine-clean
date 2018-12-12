@@ -22,5 +22,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-styled-components`,
     },
+    {
+      resolve: 'gatsby-plugin-sentry',
+      options: {
+        dsn: 'https://bba3ac2fce53493aa80d5ca486fa635e@sentry.io/1351931',
+        // Optional settings, see https://docs.sentry.io/clients/node/config/#optional-settings
+        config: {
+          environment: 'prod'
+        }
+      },
+    },
   ],
 };
