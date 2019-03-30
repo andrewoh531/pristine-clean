@@ -66,12 +66,6 @@ class OurServices extends Component {
                   <td>Yes</td>
                 </tr>
                 <tr>
-                  <td>Empty trash</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                </tr>
-                <tr>
                   <td>Dust all surfaces</td>
                   <td>Yes</td>
                   <td>Yes</td>
