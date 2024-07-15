@@ -34,9 +34,9 @@ class OurServices extends Component {
                   <td>
                     <span className="bold">Starting Price</span>
                   </td>
-                  <td>$55</td>
-                  <td>$100</td>
-                  <td>$300</td>
+                  <td>$90</td>
+                  <td>$150</td>
+                  <td>$500</td>
                 </tr>
 
                 <tr className="active">
