@@ -50,22 +50,22 @@ const prices = {
     },
     [BATHROOMS_2.value]: {
       [REGULAR_CLEANING.value]: 100,
-      [DEEP_CLEANING.value]: 170,
+      [DEEP_CLEANING.value]: 180,
       [MOVING_CLEANING.value]: 550,
     },
     [BATHROOMS_3.value]: {
       [REGULAR_CLEANING.value]: 110,
-      [DEEP_CLEANING.value]: 190,
+      [DEEP_CLEANING.value]: 210,
       [MOVING_CLEANING.value]: 600,
     },
     [BATHROOMS_4.value]: {
       [REGULAR_CLEANING.value]: 120,
-      [DEEP_CLEANING.value]: 210,
+      [DEEP_CLEANING.value]: 240,
       [MOVING_CLEANING.value]: 650,
     },
     [BATHROOMS_5.value]: {
       [REGULAR_CLEANING.value]: 130,
-      [DEEP_CLEANING.value]: 230,
+      [DEEP_CLEANING.value]: 270,
       [MOVING_CLEANING.value]: 700,
     },
   },
@@ -77,22 +77,22 @@ const prices = {
     },
     [BATHROOMS_2.value]: {
       [REGULAR_CLEANING.value]: 110,
-      [DEEP_CLEANING.value]: 190,
+      [DEEP_CLEANING.value]: 200,
       [MOVING_CLEANING.value]: 650,
     },
     [BATHROOMS_3.value]: {
       [REGULAR_CLEANING.value]: 120,
-      [DEEP_CLEANING.value]: 210,
+      [DEEP_CLEANING.value]: 230,
       [MOVING_CLEANING.value]: 700,
     },
     [BATHROOMS_4.value]: {
       [REGULAR_CLEANING.value]: 130,
-      [DEEP_CLEANING.value]: 230,
+      [DEEP_CLEANING.value]: 260,
       [MOVING_CLEANING.value]: 750,
     },
     [BATHROOMS_5.value]: {
       [REGULAR_CLEANING.value]: 140,
-      [DEEP_CLEANING.value]: 250,
+      [DEEP_CLEANING.value]: 290,
       [MOVING_CLEANING.value]: 800,
     },
   },
