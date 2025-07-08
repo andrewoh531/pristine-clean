@@ -40,14 +40,33 @@ class TestimonialCarousel extends Component {
   render() {
     return (
       <div className="testimonials-container section">
-        <div className="section-heading">Testimonies</div>
+        <div className="section-heading">Testimonials</div>
         <Slider {...options}>
           {testimonialsJson.map(t => (
             <div key={t.name}>
+              {/* Placeholder: Add customer photo/avatar here in the future */}
               <Testimonial name={t.name} text={t.text} date={t.date} />
+              {/* Placeholder: Optionally display customer location here */}
             </div>
           ))}
         </Slider>
+        <div className="testimonial-cta" style={{textAlign: 'center', marginTop: '2rem'}}>
+          <strong>Ready to experience the difference?</strong><br />
+          <a href="#contact-us" className="cta-button" style={{
+            display: 'inline-block',
+            background: '#039BE5', // calmer blue
+            color: '#fff',
+            padding: '0.75em 2em',
+            borderRadius: '4px',
+            textDecoration: 'none',
+            fontWeight: 600,
+            fontSize: '1.1em',
+            marginTop: '1em',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.07)'
+          }}>
+            Request Your Free Quote
+          </a>
+        </div>
       </div>
     )
   }

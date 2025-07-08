@@ -171,6 +171,19 @@ class ContactUsPresentation extends Component {
             type="button"
             data-loading-text="Sending..."
             className="button"
+            style={{
+              background: '#039BE5',
+              color: '#fff',
+              border: 'none',
+              borderRadius: '4px',
+              fontWeight: 600,
+              fontSize: '1.1em',
+              padding: '0.75em 2em',
+              marginTop: '1em',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.07)',
+              cursor: this.shouldDisableButton() ? 'not-allowed' : 'pointer',
+              opacity: this.shouldDisableButton() ? 0.6 : 1
+            }}
             onClick={this.submitHandler}
           >
             {buttonLabel}

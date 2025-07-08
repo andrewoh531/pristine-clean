@@ -198,7 +198,7 @@ const SelectionContainer = styled.div`
 `
 
 const StyledAnchor = styled.a`
-  background-color: #007bff;
+  background-color: #039BE5;
   color: white;
   font-size: 1em;
   font-weight: 400;

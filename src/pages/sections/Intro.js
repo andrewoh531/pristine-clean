@@ -39,7 +39,7 @@ const Tagline = styled.div`
 
 const Intro = props => (
   <Container className="intro-background">
-    <Title>Pristine Clean</Title>
+    <Title as="h1">Pristine Clean</Title>
     <Tagline>Relax</Tagline>
     <Tagline>Leave the cleaning to us</Tagline>
   </Container>
